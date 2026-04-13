@@ -7,8 +7,8 @@ body {
   color: hsl(0, 0%, 0%);
   font-weight: 800;
 }
-
-.small-para {
+/* Thought no.4: .small-para->.para.small-para */
+.para.small-para {
   font-size: 14px;
   font-weight: 800;
 }
@@ -16,20 +16,20 @@ body {
 .para {
   font-size: 22px;
 }
-
-.confirm {
+/* Thought no.2 : .confirm->.button.confirm */
+.button.confirm {
   background: green;
   color: white;
   font-weight: bold;
 } 
-
-.button {
+/* Thought no.1 : .button->.cancel, ok wait changing this is still not enough btw since the green button need to get the 20px fontsize also, so the way to do it is to revert to button again lol, and instead change .confirm->.button.confirm, so that .button.confirm is more specific than .button, so that it still remains green, but also get the fontsize of 20px since it doesnt there is no contradiction there */
+.button { 
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-size: 20px;
 }
-
-.child {
+/* Thought no.3: .child->.text.child */
+.text.child {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
