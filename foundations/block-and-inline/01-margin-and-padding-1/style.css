@@ -7,15 +7,15 @@ body {
   background: pink;
   border: 3px solid blue;
   /* CHANGE ME */
-  padding: 30px;
-  margin: 10px;
+  padding: 32px;
+  margin: 12px;
 }
 
 .two {
   background: lightblue;
   border: 3px solid purple;
   /* CHANGE ME */
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .three {
@@ -23,6 +23,8 @@ body {
   border: 3px solid brown;
   width: 200px;
   /* CHANGE ME */
-  padding: 30px;
-  margin-left: 334px;
+  padding: 32px;
+  margin-left: auto; 
+  /* margin-left 334px -> auto */
+  /* notice that max-width=600px, therefore auto = 600-(200+2*3+32*2)=330 wow!, turns out my 334px almost nailed it! */
 }
