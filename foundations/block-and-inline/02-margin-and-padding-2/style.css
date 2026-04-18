@@ -1,27 +1,86 @@
 body {
   background: #eee;
   font-family: sans-serif;
+  font-size: 16px;
 }
 
 .card {
   width: 400px;
   background: #fff;
   margin: 16px auto;
+  padding-top: 16px;
+  padding-bottom: 3px;
 }
+/* 
+#thought 1: added paddings, realized how this ".card" thing is the container that contains the 3 blue boxes 
+-> also realize that the margin doesn't affect anything inside of it, so it's quite irrelevant here ig, only the padding does.
+
+UPDATE(after thought 2): using paddings is unwise! removed.
+
+UPDATE(after thought 3): add padding-top
+
+ */
 
 .title {
   background: #e3f4ff;
-}
+  font-size: 16px; 
+  /* added font-size here to be more specific, cuz h1's default size beats the parent's (body's) size */
+  margin-left: 6px ;
+  margin-right: 6px ;
+  margin-top: 0px;
+  margin-bottom: 6px ;
+  padding: 6px;
 
+}
+/* 
+#thought 2: the white gap above and under are still thick even after changing padding-top in .card, 
+[wrong btw: realized it's because we need to change the title's margin too.]
+[wrong btw: also that this title's default margin follows its parent's margin, that is 16px -> it doesnt follow its parent's margin of 16px.]
+INTERESTING QUESTION: whats the relation between card's padding-top and title's margin-top?
+ANS: they add together... hmm 
+INSIGHT: therefore, using card's paddings make the gaps dependent on 2 variables, i.e. card's padding and title's margin, which is convoluting, so....... lets remove padding, and use margin only!!!!
+
+#thought 3: margin=12px in title, but no gap above it, why?? 
+-> turns out theres a weird thing with vertical margin-padding relationship, called margin collapsing, where when the padding is 0, then there wont be a gap, and instead the title's margin will collapse/combine with the title's margin on the outside.
+-> conclusion: to deal with vertical gaps, need to use padding, perhaps dont use margin-top for this one
+-> slight recap: for horizontal gaps, use only margins; vertical gaps, use only paddings
+
+#thought 4: margin-left=margin-right=6px,padding-top=6px, but the padding's gap looks so much bigger, why?
+-> cuz turns out, after inspecting the title box, its margin-top and margin-bottom =10.720px!!! (h1's default settings!!!)
+-> conclusion: need to declare margin-top=0 
+
+
+*/
 .content {
   background: #e3f4ff;
+  margin: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* the 3rd "blah" goes to the new line (bad) for padding>=6px (or more precisely, cant even do padding-left=5px, padding-right:5.1px, btw) */
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .button-container {
   background: #e3f4ff;
+  margin: 6px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 button {
   background: white;
   border: 1px solid #eee;
+  display: block;
+  margin: auto; 
+  /* thoughts earlier: hmm should i do display:block and set margin-left:148px ??? 
+  -> cuz it seems like i cant use the "text-align:center" feature cuz it only does it to inline stuffs, 
+  and also, it is still not enough if i set display:inline-block, cuz all it does is to allow width and height, without going to a new line
+  -> so it seems like display:block and margin-left:148px is the only way here hmm
+  -> UNTIL I REALISE THERE IS MARGIN:AUTO, problem solved. (but yes, absolutely need display:block)  */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
