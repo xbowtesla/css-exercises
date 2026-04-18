@@ -43,7 +43,9 @@ INSIGHT: therefore, using card's paddings make the gaps dependent on 2 variables
 #thought 3: margin=12px in title, but no gap above it, why?? 
 -> turns out theres a weird thing with vertical margin-padding relationship, called margin collapsing, where when the padding is 0, then there wont be a gap, and instead the title's margin will collapse/combine with the title's margin on the outside.
 -> conclusion: to deal with vertical gaps, need to use padding, perhaps dont use margin-top for this one
--> slight recap: for horizontal gaps, use only margins; vertical gaps, use only paddings
+-> slight recap (not ideal btw): for horizontal gaps, use only margins; vertical gaps, use only paddings
+-------> RECAP FIX (THE IDEAL WAY): JUST USE THE TITLE'S PADDINGS, THE SIDES ALSO USE TITLE'S PADDINGS, U KNOW WHY? CUZ THE SIDE GAPS FOR ALL THREE BOXES INSIDE ARE THE SAME, SO WHY WRITE MARGIN-LEFT/MARGIN-RIGHT 3 TIMES IF U CAN JUST WRITE PADDING-LEFT/PADDIN-RIGHT ONE IN TITLE...
+
 
 #thought 4: margin-left=margin-right=6px,padding-top=6px, but the padding's gap looks so much bigger, why?
 -> cuz turns out, after inspecting the title box, its margin-top and margin-bottom =10.720px!!! (h1's default settings!!!)
@@ -78,7 +80,8 @@ button {
   -> cuz it seems like i cant use the "text-align:center" feature cuz it only does it to inline stuffs, 
   and also, it is still not enough if i set display:inline-block, cuz all it does is to allow width and height, without going to a new line
   -> so it seems like display:block and margin-left:148px is the only way here hmm
-  -> UNTIL I REALISE THERE IS MARGIN:AUTO, problem solved. (but yes, absolutely need display:block)  */
+  -> UNTIL I REALISE THERE IS MARGIN:AUTO, problem solved. (but yes, absolutely need display:block)  
+  -> also no need to care about the vertical margin, just use button-container's padding, easier and simpler, cuz if use vertical margin, need to set both the the div and the button */
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 6px;
