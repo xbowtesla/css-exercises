@@ -8,28 +8,26 @@ body {
   width: 400px;
   background: #fff;
   margin: 16px auto;
-  padding-top: 16px;
-  padding-bottom: 3px;
+  padding: 8px;
 }
 /* 
 #thought 1: added paddings, realized how this ".card" thing is the container that contains the 3 blue boxes 
 -> also realize that the margin doesn't affect anything inside of it, so it's quite irrelevant here ig, only the padding does.
 
-UPDATE(after thought 2): using paddings is unwise! removed.
+UPDATE(after thought 2): using paddings is unwise! removed. [spoiler: after everything, turns out using padding is absolutely better! bruhh]
 
 UPDATE(after thought 3): add padding-top
 
+#thought 5: can simply just use padding:8px, even tho the upper gap is bigger than the others, THIS IS BECAUSE THE DEFAULT SETTINGS OF H1 IS THAT IT HAS 10.720PX VERTICAL MARGIN... LOL 
+-> earlier (use padding without margin): padding-top:16px ; now: padding+h1's-default-margin=8+10.72=18.72px
  */
 
 .title {
   background: #e3f4ff;
   font-size: 16px; 
   /* added font-size here to be more specific, cuz h1's default size beats the parent's (body's) size */
-  margin-left: 6px ;
-  margin-right: 6px ;
-  margin-top: 0px;
-  margin-bottom: 6px ;
-  padding: 6px;
+  margin-bottom: 8px ; /* from 6->8px like the solution, idk more accurate ig*/
+  padding: 8px; /* from 6->8px like the solution, idk more accurate ig*/
 
 }
 /* 
@@ -51,24 +49,19 @@ INSIGHT: therefore, using card's paddings make the gaps dependent on 2 variables
 -> cuz turns out, after inspecting the title box, its margin-top and margin-bottom =10.720px!!! (h1's default settings!!!)
 -> conclusion: need to declare margin-top=0 
 
-
 */
 .content {
   background: #e3f4ff;
-  margin: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  /* the 3rd "blah" goes to the new line (bad) for padding>=6px (or more precisely, cant even do padding-left=5px, padding-right:5.1px, btw) */
-  padding-top: 12px;
-  padding-bottom: 12px;
+  margin-bottom: 8px;
+  padding: 16px 8px /*if top=bottom, left=right, can write like this instead*/
 }
 
 .button-container {
   background: #e3f4ff;
-  margin: 6px;
   text-align: center;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 8px; 
+  /*padding-top&bottom:6px -> padding:8px 
+  -> also btw the side paddings dont matter cuz of the text-align:center */
 }
 
 button {
@@ -82,8 +75,12 @@ button {
   -> so it seems like display:block and margin-left:148px is the only way here hmm
   -> UNTIL I REALISE THERE IS MARGIN:AUTO, problem solved. (but yes, absolutely need display:block)  
   -> also no need to care about the vertical margin, just use button-container's padding, easier and simpler, cuz if use vertical margin, need to set both the the div and the button */
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 8px 24px; /*more accurate, from sol*/
 }
+
+/*FINAL REFLECTION: I mean if i see it again, about the "padding on card is better than setting margins on 3 of the boxes" idea, turns out here, realistically, we still see how we still mention margin-bottom on title and content box (basically, boxes that have another box below them)
+-> before change (only padding-top on title + margins on 3 boxes) 
+-> after change (padding on title + margins on 2 boxes)
+so yeah, the change is good, but u know what, its kinda unpredictable and depends on the scenario i feel like, so its best to remain open on every alternatives cuz im still learning, no need to overthink on the most efficient way to do it, for now...
+
+*/
