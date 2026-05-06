@@ -5,7 +5,9 @@
   height: 300px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
+  /* can either use this or align-self in .box, (doing align-content: center doesnt do anything btw, try to realize the difference between align-items and content, 
+  content is when theres more than 1 thing in the cross axis, so center here means the relation between multiple items in the cross axis, thats why when theres only 1 item, it doesnt do anything idk tho) */
 }
 
 .box {
@@ -15,5 +17,4 @@
   border: 6px solid maroon;
   width: 80px;
   height: 80px;
-  
 }

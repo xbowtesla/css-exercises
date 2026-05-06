@@ -1,6 +1,10 @@
 .header  {
   font-family: monospace;
   background: papayawhip;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px; /* (helped by sol) just realized need this other than align-items:center, gap isnt enough either cuz gap is only between items */
 }
 
 .logo {
@@ -14,12 +18,16 @@
 ul {
   /* this removes the dots on the list items*/
   list-style-type: none;
+  display: flex;
+  gap : 8px; /* (helped by sol) at first i thought need justify-content: space-around lol turns out u cant even space anything cuz they dont have spaces between them, they stick together */
+  /* in sol, use margin:0, but i think here no need cuz its alr 0 when i inspect it, i think they just wanna enforce it just in case diff browsers things */
+  padding: 0; /* (helped by sol) need to set to 0, by inspecting we can see it has 40px padding, cuz of list default setting ig */
 }
 
 a {
   font-size: 22px;
   background: white;
-  padding: 8px;
+  padding: 8px; 
   /* this removes the line under the links */
   text-decoration: none;
 }
