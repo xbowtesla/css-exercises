@@ -12,6 +12,12 @@ body {
   background: white;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 8px rgba(0,0,0,.1);
+  display: flex; /* was putting display:flex in body, which doesnt work as well as this one 
+  (it didnt become row, i mean ofc cuz it only arranges it's items 1 level below it which is the div which is only 1 item, 
+  so the logo, links, and all are still a column */ 
+  justify-content: space-between;
+  align-items: center; /* doesnt do anything, prolly cuz the 2 items have the same height as the header container already, unlike the align-items in left and right container */
+  padding: 8px;
 }
 
 .profile-image {
@@ -45,4 +51,21 @@ a {
 
 ul {
   list-style-type: none;
+  display: flex;
+  gap: 16px;
+  padding: 0; /* the default is 40px */
+  margin: 0; /* the default is 16px top and bottom */
+}
+
+.left {
+  display: flex;
+  gap: 16px;
+  align-items: center; /* set margin of ul =0, made it uncentered, so need this */
+
+}
+
+.right {
+  display: flex;
+  gap: 16px;
+  align-items: center; /* it somehow makes the notif button looks more compact idk why */
 }
