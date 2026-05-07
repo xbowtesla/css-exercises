@@ -10,6 +10,7 @@ img {
 .title {
   font-size: 36px;
   font-weight: 900;
+  text-align: center; /* sol uses text-align:  center in body instead, tried it, doesnt make a difference i think */
 }
 
 /* do not edit this footer */
@@ -24,3 +25,40 @@ img {
   justify-content: center;
   background: #eee;
 }
+
+.column1, .column2 { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row; /* oops no need xd, default is row alr but ok */
+  gap: 52px;
+  justify-content: center; /*this is only relevant after we set the max-width of column2 to 200px thx to sol, BUT FOR A SECRET AND ANNOYING REASON THAT I JUST DISCOVERED AFTER SPENDING HOURS ASKING GPT/GEMINI.
+  That is: firstly, I notice that width of 4 items + 3*52 = 1263 (width of the row container) -> like somehow the 4 items adjust their widths to perfectly fit the container idk why, cuz this shouldnt supposed to happen
+  cuz we never set flex-grow:1 (infact the default is flex:0 1 auto). Then I set the row container's width to 1500px and yes, the width of the 4 items adjust to fit perfectly again...
+
+  The reason (finally): cuz of the long texts, they always try to be as long horizontally as possible if given the space, meaning, THEY ARE THE FLEX-GROW:1, wow... (the text width dictates the width of the item, the image is always only 100px)
+  
+  Text is the "invisible force" in CSS. ~Gemini
+
+  conclusion: justify-content:center doesnt do anything unless we set max-width if theres long texts. 
+   */
+}
+
+.text {
+  text-align: center;
+}
+
+.column1 {
+  gap: 32px;
+}
+
+.column2 {
+  max-width: 200px; /*thx to sol*/
+}
+
+
+
