@@ -7,7 +7,7 @@ body {
   font-family: Roboto, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /*idk why sol does "flex:1 + display:column + justify-content:center" in .content instead of just doing this to make the content centered */ 
 }
 
 img {
