@@ -44,12 +44,10 @@ input {
   gap: 10px;
   padding: 0; /* remove annoying default padding-left */
   margin: 0; /* remove annoying top and bottom margin */
-  list-style-type: none;
 }
 
 li {
-  
-
+  list-style-type: none; /* can actually just state this in the .left-links, .right-links container (or ul container) */
 }
 
 a {
