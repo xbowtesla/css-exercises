@@ -9,12 +9,27 @@
   </head>
   <body>
     <div class="modal">
+
       <div class="icon">!</div>
-      <div class="header">Are you sure you want to do that?</div>
-      <button class="close-button">✖</button>
-      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur excepturi id soluta, numquam minima rerum doloremque eveniet aspernatur beatae commodi. Cupiditate recusandae ad repellendus quidem consectetur sequi amet aspernatur cumque!</div>
-      <button class="continue">Continue</button>
-      <button class="cancel">Cancel</button>
+
+      <div class="not-icon">
+
+        <div class="header-close">
+          <div class="header">Are you sure you want to do that?</div>
+          <button class="close-button">✖</button>
+        </div>
+        <!--- turns out u dont need to make a new "header-close" container, just use the header as the container and put in the close button inside it!! (check sol to see)-->
+
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur excepturi id soluta, numquam minima rerum doloremque eveniet aspernatur beatae commodi. Cupiditate recusandae ad repellendus quidem consectetur sequi amet aspernatur cumque!</div>
+        
+        <div class="buttons">
+          <button class="continue">Continue</button>
+          <button class="cancel">Cancel</button>
+        </div>
+        <!--turns out u dont need to make a container for the buttons cuz they are inline xd hmm ye, ehh idk (checked, tried to make another button, located still in the same row)-->
+
+      </div>
+
     </div>
   </body>
 </html>
